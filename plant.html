@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf Disease Detection</title>
+  <link rel="stylesheet" href="plantdisease.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="welcome-container">
+      <h1>Welcome to Leaf Disease Detection</h1>
+      <p>Upload an image of your plant leaf to detect any potential diseases and get preventive measures.</p>
+      <button onclick="showDetection()">Start Detection</button>
+    </div>
+
+    <div class="detection-container" style="display: none;">
+      <header>
+        <h1>Leaf Disease Detection</h1>
+      </header>
+      <main>
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage()" />
+        <button onclick="detectDisease()">Detect Disease</button>
+
+        <!-- Image Preview Container -->
+        <div id="image-preview-container">
+          <p>Selected Image:</p>
+          <div id="image-preview">
+            <img id="preview-img" src="" alt="Selected Image" style="display: none;" />
+          </div>
+        </div>
+
+        <div id="loading-spinner" style="display: none;">
+          <div class="spinner"></div>
+        </div>
+        <div id="detection-result">
+          <h2 id="disease-name"></h2>
+          <p id="disease-name-title">Disease Name:</p>
+          <p id="precautions-title">Prevention:</p>
+          <p id="precautions"></p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="test.js"></script>
+</body>
+</html>
